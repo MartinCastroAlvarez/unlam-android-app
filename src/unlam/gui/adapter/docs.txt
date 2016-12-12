@@ -1,0 +1,19 @@
+
+1) Version: 
+
+	unlam.gui.adapter v1.0 27/10/2014
+	Martín Alejandro Castro Álvarez
+	martincastro.10.5@gmail.com
+
+2) Description:
+	
+	This package contains all the classes necessary to display 
+	custom ListView elements.
+
+3) Classes:
+
+	1) unlam.gui.adapter.ToolsAdapter: 	Tabs at the left config panel.-
+	2) unlam.gui.adapter.CalendarAdapter:	Clusters at CalendarFragment.-
+	3) unlam.gui.adapter.ClusterAdapter:	Events in a Cluster at ClusterFragment.-
+	4) unlam.gui.adapter.CommentsAdapter:	Comments in Cluster at ClusterFramgnent.-
+	5) unlam.gui.adapter.NewsAdapter:	Elements at NewsDB shown at HomeFragment.-

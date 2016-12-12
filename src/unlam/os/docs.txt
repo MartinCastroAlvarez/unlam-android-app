@@ -1,0 +1,40 @@
+
+1) Version:
+
+	unlam.os v1.0 25/10/2014
+	Martín Alejandro Castro Álvarez
+	martincastro.10.5@gmail.com
+
+2) Description:
+
+	This package contains all syncrhonization services used by the main application
+	and are mostly run in background.-
+
+3) Classes:
+
+	1) unlam.os.BootReceiver: 		This is at charge of running the UNLaM service when the system boots.-
+	2) unlam.os.UNLaMService:		This is the main dameon at charge of all the syncrhonizations.-
+	3) unlam.os.SyncCalendar:		Downloading data from the web is not allowed unless and async task is created.-
+	4) unlam.os.SyncMap:			idem.-
+
+4) Usage:
+
+	# Import dependencies:
+	import unlam.os.UNLaMService;
+	import unlam.os.SyncMap;
+	import unlam.os.SyncCalendar;
+	import unlam.os.BootReceiver;
+	import android.content.Intent;
+
+	# Control service.-
+	Intent serviceIntent = new Intent(Activity a, UNLaMService.class);
+	startService(serviceIntent);
+	stopService(serviceIntent);
+
+	# The service will make the Calendar and Map objects
+	# download their data using their own methods.
+	# Yet, it will take into account the mapSyncLapse,	
+	# calendarSyncLapse, calendarSyncDelay & mapSyncDelay
+	# stored at the config.properties file.-
+	# Have a look at that file to see how to configure the
+	# service properly.-

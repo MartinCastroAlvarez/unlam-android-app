@@ -1,0 +1,41 @@
+
+1) Version: 
+
+	unlam.news v1.0 29/10/2014
+	Martín Alejandro Castro Álvarez
+	martincastro.10.5@gmail.com
+
+2) Description:
+	
+	This package contains the model for news that will be published
+	in the main page of the applicatiob.-
+
+3) Classes:
+
+	1) unlam.news.News: 		Simple text and date holder.-
+
+4) Usage:
+
+	# Import dependencies:
+	import unlam.news.News;
+	import java.util.Date;
+
+	# Create a new instance.-
+	News n = new News();
+
+	# Getters and Setters.-
+	String s = n.getText();
+	Date d = n.getDate();		
+	n.setDate(Date d);
+	n.setText(String s);
+
+	# dateToString returns a formated date
+	String s = n.dateToString();
+
+	# Sets time to now.-
+	n.setDateToNow();
+
+	# DEBUG
+	import unlam.news.Test;
+	Test t = new Test();
+	

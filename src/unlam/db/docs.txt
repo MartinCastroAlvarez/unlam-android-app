@@ -1,0 +1,78 @@
+
+1) Version: 
+
+	unlam.db v1.0 25/10/2014
+	Martín Alejandro Castro Álvarez
+	martincastro.10.5@gmail.com
+
+2) Description:
+	
+	This packages contains all database connection classes that are handled
+	by the android framework.-
+
+3) Classes:
+
+	1) unlam.db.CalendarDB:		Database connection for unlam.cal;
+	2) unlam.db.ImagesDB:		Database connection for unlam.map and other images;
+	3) unlam.db.NewsDB:		Database connection for unlam.news;
+
+4) Usage:
+
+	# CALENDAR DB
+	import unlam.db.CalendarDB;
+	import unlam.cal.CalendarDB;
+	import unlam.cal.Cluster;
+	import unlam.cal.Event;
+	import unlam.cal.Test;
+	import java.util.ArrayList;
+	import java.util.Date;
+
+		# Open a new connection to the Calendar database.-
+		CalendarDB db = new CalendarDB(Activity a,null,null,1);
+
+		# CREATE
+		db.createCluster(Cluster c);
+		db.createEvent(Event e);
+
+		# READ
+		Calendario cal = db.getCalendar();
+		Cluster cl = db.getCluster(int clusterID);
+		ArrayList<Event> a = db.getEvents(int clusterID);	
+		ArrayList<String> a = db.getComments(int clusterID);	
+		Event ev = db.getEvent(int eventID);
+
+		# UPDATE
+		- 
+	
+		# DELETE 
+		# Delete all elements in the Calendar database.
+		# This should be used before doing a sync.-
+		db.clean();
+
+		# COUNT 
+		int i = db.count();
+			
+	# NEWS DB
+	import unlam.db.NewsDB;
+	import unlam.news.News;
+	import java.util.ArrayList;
+	import java.util.Date;
+
+		# Open a new connection to the Calendar database.-
+		News db = new NewsDB(Activity a,null,null,1);
+
+		# CREATE
+		db.storeNews(News n);
+
+		# READ
+		ArrayList<News> n = db.getNews();
+
+		# UPDATE
+		- 
+	
+		# DELETE 
+		db.deleteMoreThan(int i);
+
+		# COUNT
+		int i = db.count();
+

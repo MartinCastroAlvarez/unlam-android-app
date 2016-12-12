@@ -1,0 +1,98 @@
+
+1) Version: 
+
+	unlam.cal v1.0 25/10/2014
+	Martín Alejandro Castro Álvarez
+	martincastro.10.5@gmail.com
+
+2) Description:
+	
+	This is package contains the model for the Calendar, Cluster and Events.
+	The calendar is donwloaded from the URL that is defined inside config.properties
+	as calendarSourceURL
+
+3) Classes:
+
+	1) unlam.cal.Calendario: 	Main calendar that groups unlam.cal.Clusters.-
+	2) unlam.cal.Cluster: 		Group of events inside a calendar.-
+	3) unlam.cal.Event: 		One single event in one specific date.-
+	4) unlam.cal.Test:		Debug tool.-
+
+4) Usage:
+
+	# Import dependencies:
+	import unlam.cal.Calendario;
+	import unlam.cal.Cluster;
+	import unlam.cal.Event;
+	import unlam.cal.Test;
+	import java.util.ArrayList;
+	import java.util.Date;
+
+	# CALENDAR:
+	# Create a new calendar:
+	unlam.cal.Calendario cal = new unlam.cal.Calendario();
+
+		# Download the calendar from the web:
+		cal.download()
+
+		# Sets the calendar from an array of clusters:
+		cal.setCalendar(ArrayList<Cluster> a);
+		
+		# Returns an array of clusters :
+		ArrayList<Cluster> c = cal.getCalendar();	
+
+		# Evaluate if calendar was loaded.
+		boolean b = cal.isCalendarLoaded();
+
+	# CLUSTERS:
+	# Create a new cluster:
+	unlam.cal.Cluster cl = new unlam.cal.Cluster();
+		
+		# Setters.-
+		cl.setTitle(String s);
+		cl.setEvents(ArrayList<Event> q);
+		cl.addEvent(String title,String date)
+		cl.addComment(String c);
+		cl.setType(Int i);
+		cl.setComments(ArrayList<String> a);
+
+		# Getters.-
+		String s = cl.getTitle();
+		Int t = cl.getType();
+		ArrayList<String> c = cl.getComments();
+		ArrayList<Event> e = cl.getEvents();
+
+	# EVENTS:
+	# NOTE: Events should not be created or altered by themselves. 
+	# Instead, they should be handled by the parent Cluster objects.
+	# For that reason, the following section should not be considered
+	# but for debugging purposes.
+	unlam.cal.Event ev = new unlam.cal.Event();
+
+		# Setters
+		ev.setType(int i);
+		ev.setTitle(String s);
+		ev.setDateString(String d);
+
+		# Set date from String or date object.
+		# Both methods are allowed.
+		ev.setDate(Date d);
+		ev.setDate(String s);
+	
+		# Getters
+		int i = ev.getType();
+		String s = ev.getTitle();
+		String d = ev.getDateString();
+		Date d = ev.getDate();
+	
+		# This method parses a complex date string value
+		# shown commonly at the source URL and returns a 
+		# Date object after severe analysis.-
+		# NOTE: If the HTML Code changes at the URL, then 
+		# this method has to be reviewed in order to 
+		# find out how to turn the new HTML into a Date
+		# object again.-
+		ev.date(String day, String month, String year);
+	
+	# DEBUG	
+	unlam.cal.Test t = new unlam.cal.Test();

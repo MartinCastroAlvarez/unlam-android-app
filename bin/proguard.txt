@@ -1,0 +1,18 @@
+# view res/layout/activity_main.xml #generated:2
+-keep class android.support.v4.widget.DrawerLayout { <init>(...); }
+
+# view res/layout/fragment_map.xml #generated:6
+-keep class com.ortiz.touch.TouchImageView { <init>(...); }
+
+# view AndroidManifest.xml #generated:18
+-keep class unlam.gui.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:27
+-keep class unlam.os.BootReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:25
+-keep class unlam.os.UNLaMService { <init>(...); }
+
+# view AndroidManifest.xml #generated:33
+-keep class unlam.os.WifiReceiver { <init>(...); }
+

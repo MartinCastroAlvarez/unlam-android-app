@@ -1,0 +1,19 @@
+
+1) Version: 
+
+	unlam.gui.tabs v1.0 27/10/2014
+	Martín Alejandro Castro Álvarez
+	martincastro.10.5@gmail.com
+
+2) Description:
+	
+	The application runs several tabs within only one activity.
+	This package contains the main page (Fragment) for each of 
+	those app-sections.-
+
+3) Classes:
+
+	1) unlam.gui.tabs.HomeFragment:		Main fragment when app starts.-
+	1) unlam.gui.tabs.CalendarFragment:	List of clusters.-
+	1) unlam.gui.tabs.ClusterFragment:	List of events inside one cluster.-
+	1) unlam.gui.tabs.MapFragment:		UNLaM map.-
